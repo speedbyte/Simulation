@@ -1,0 +1,36 @@
+% Analysis of the Quadrocoptermodell
+% This M-File checks the controllability and observability of the
+% Quadrocoptermodell
+clear all;
+
+%% initialize the workspace to use the modell
+run quadrocopter_param
+run quadrocopter_sim
+run quadrocopter_testcases
+
+%% generate the state-space-matrices 
+sys=linmod('Test_Copter');
+
+%% Calculate eigen-values
+display('Eigen-values of the modell')
+% sys.StateName
+eig(sys.a)
+
+%% Get count of all states available
+display('Count of all States available')
+size(sys.a)
+
+%% Calculate controlability
+display('Count of controllable states')
+[ABAR,BBAR,CBAR,T,K] = ctrbf(sys.a,sys.b,sys.c);
+sum(K)
+
+%% Calculate observability
+display('Count of observable states')
+[ABAR,BBAR,CBAR,T,K] = ctrbf(sys.a,sys.b,sys.c);
+sum(K)
+
+%% Reduce modell to controlable and observable states
+display('Reduced modell')
+[msys,U] = minreal(sys);
+msys.StateName

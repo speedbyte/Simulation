@@ -1,0 +1,36 @@
+clear all;
+clc;
+% the data
+     nt=5; % <- traces
+     np=100; % <- data/trace
+% prepare the plot
+     axes('xlim',[1,np],'ylim',[-2,3]);
+     x=1:np;
+     y=1:np;
+     lh=line(x,y,...
+            'userdata',1,...
+            'marker','.',...
+            'markersize',5,...
+            'linestyle','-');
+     lb=line([inf,inf],[-2,3]);
+     grid on;
+     shg;
+% prepare a simple timer function
+     com=[
+          'ix=get(lh,''userdata'')+1;',...
+          'ix=rem(ix-1,np)+1;'...
+          'y(ix)=rand;'...
+          'set(lb,''xdata'',[ix,ix]);'...
+          'set(lh,''ydata'',y,''userdata'',ix);'
+     ];
+% create the timer
+     th=timer;
+     set(th,...
+        'timerfcn',com,...
+        'period',.05,...
+        'executionmode','fixedrate');
+% ...and start it
+     start(th);
+% use
+% stop(th);
+% delete(th); 

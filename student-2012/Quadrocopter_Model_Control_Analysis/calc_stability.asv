@@ -1,0 +1,26 @@
+phi0 = 0;
+r_phi0=0;
+theta0 = 0;
+r_theta0 = 0;
+psi0 = 0;
+r_psi0 = 0;
+
+sys = dlinmod('System_Design_Quadrocopter_reduced');
+
+[Num1, Den1] = ss2tf(sys.a, sys.b, sys.c, sys.d, 1)
+[Num2, Den2] = ss2tf(sys.a, sys.b, sys.c, sys.d, 2)
+[Num3, Den3] = ss2tf(sys.a, sys.b, sys.c, sys.d, 3)
+%[Num4, Den4] = ss2tf(sys.a, sys.b, sys.c, sys.d, 4)
+
+sys1 = tf(Num1(1,:), Den1);
+sys2 = tf(Num2(2,:), Den2);
+sys3 = tf(Num3(3,:), Den3);
+%sys4 = tf(Num4(4,:), Den4);
+
+t=[0:1:12];
+
+pzmap(ss(sys.a,sys.b,sys.c,sys.d));
+%pzmap(sys1);
+%pzmap(sys2);
+%pzmap(sys3);
+ 

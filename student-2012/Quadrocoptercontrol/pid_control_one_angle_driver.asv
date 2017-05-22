@@ -1,0 +1,31 @@
+R1 = 5.438/132.6; % Rückkoppelfaktoren
+R2 = 4.6305/132.6; % Rückkoppelfaktoren
+
+sys = linmod('pid_control_one_angle')
+sys_open = linmod('pid_control_one_angle_open')
+
+[num1, den1] = ss2tf(sys.a, sys.b, sys.c,sys.d,1)
+Gs1 = tf(num1,den1)
+
+[num2, den2] = ss2tf(sys_open.a, sys_open.b, sys_open.c,sys_open.d,1)
+Gs2 = tf(num2,den2)
+ 
+
+figure(1)
+step(Gs1,'r',Gs2,'g', 1)
+
+P1=pole(Gs1)
+P2=pole(Gs2)
+
+figure(3)
+
+plot(real(P1(1)), imag(P1(1)), 'bo')
+hold on;
+plot(real(P1(2)), imag(P1(2)), 'bo')
+plot(real(P2(1)), imag(P2(1)), 'gx')
+plot(real(P2(2)), imag(P2(2)), 'gx')
+hold off;
+
+
+figure(4)
+bode(Gs1)

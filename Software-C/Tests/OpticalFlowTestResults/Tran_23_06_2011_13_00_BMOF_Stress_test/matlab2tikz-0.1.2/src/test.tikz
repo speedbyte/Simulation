@@ -1,0 +1,57 @@
+% This file was created by matlab2tikz v0.1.2.
+% Copyright (c) 2008--2011, Nico Schlömer <nico.schloemer@gmail.com>
+% All rights reserved.
+% 
+% The latest updates can be retrieved from
+%   http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz
+% where you can also make suggestions and rate matlab2tikz.
+% 
+\begin{tikzpicture}
+
+\begin{axis}[%
+view={-30.5}{30},
+name=plot1,
+scale only axis,
+width=3.79861in,
+height=3.51469in,
+xmin=1, xmax=5,
+ymin=1, ymax=5,
+xlabel={$Image Size [1=320x240]$},
+ylabel={$Block Size [1=65x49]$},
+zlabel={$Error[%]$},
+title={$BMOF Image Size vs Block Size$},
+xmajorgrids,
+ymajorgrids,
+zmajorgrids]
+
+\addplot3[%
+surf,
+shader=faceted,
+draw=black]
+coordinates{ 
+(1,1,0.522532)(2,1,0.191175)(3,1,0.331702)(4,1,0.380143)(5,1,0.545564)
+
+(1,2,0.544669)(2,2,0.15137)(3,2,0.240493)(4,2,0.299227)(5,2,0.471813)
+
+(1,3,0.692649)(2,3,0.510534)(3,3,0.299365)(4,3,0.284731)(5,3,0.245431)
+
+(1,4,1)(2,4,0.510534)(3,4,0.299365)(4,4,0.284731)(5,4,0.245431)
+
+(1,5,0.893684)(2,5,0.893684)(3,5,0.470098)(4,5,0.462133)(5,5,0.288887)
+
+};
+
+\end{axis}
+
+% colorbar
+\begin{axis}[%
+axis on top,
+at=(plot1.right of south east), anchor=left of south west,
+width=0.256663in, height=3.51469in,
+scale only axis,
+xmin=0, xmax=1,
+ymin=0, ymax=1,
+xtick=\empty, yticklabel pos=right]
+\addplot graphics [xmin=0, xmax=1, ymin=0, ymax=1] {test-colorbar1.png};
+\end{axis}
+\end{tikzpicture}

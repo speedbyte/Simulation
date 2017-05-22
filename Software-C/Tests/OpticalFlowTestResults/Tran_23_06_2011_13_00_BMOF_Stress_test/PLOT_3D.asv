@@ -1,0 +1,46 @@
+function PLOT_3D(Files, index, filesWidth, gain, xLabel, yLabel, zLabel)
+
+% Plotting
+%
+%param files: Vector with Strings of the files to print
+%param index: The index of the files which has to been printed (y-axis)
+%param tags: Vector with tags of the corresponding curves to print
+%
+% Find minimum index of datapoints
+% for i=1:size(Files, 1)
+%     load(fileNameCollect(i,:),'Tfile');
+%     Tfile=Tfile';
+%     if(size(Tfile, 1) < MinDpSize)
+%       MinDpSize=size(Tfile, 1);
+%     end
+% end
+plotcolors ='bgcmkbgcmkbgcmk';
+timeCollect=[];
+TCollect=[];
+cnt_j=0;
+idx_i=1;
+idx=[0,0];
+zData=zeros(5,5);
+load(Files(1,:),'Tfile');
+Stimuli=Tfile(2,:);
+%Collect data for plotting
+for i=1:size(Files, 1)
+     cnt_j=cnt_j+1;
+     load(Files(i,:),'Tfile');
+     %timeCollect=[timeCollect; Tfile(1,:)];
+     %TCollect=[TCollect; Tfile(index,:)];
+     zData(idx_i,cnt_j)=sum(abs{Stimuli-(gain(idx_i).*Tfile(index,:))));%var((gain(idx_i).*Tfile(index,:)), Stimuli);
+     idx=[idx_i, cnt_j]
+     if(filesWidth==cnt_j)
+       cnt_j=0;
+     end
+     if(0==mod(i,filesWidth))
+       idx_i=idx_i+1;
+     end
+end
+
+  surf([1:1:filesWidth], [1:1:filesWidth], zData);
+  colormap(hsv);
+  xlabel(xLabel);
+  ylabel(yLabel);
+  zlabel(zLabel);

@@ -1,0 +1,1 @@
+Please refer the document "Modelling_Of_Quadcopter (Path: doc\se\Quadcopter Modelling) to know the exact corelation between the Data Acquisation & Analysis folder and the Attitude Conroller Simulation folder

@@ -1,0 +1,137 @@
+Dieses Verzeichnis beinhaltet folgendes
+
+Ordner
+---------------------------------------------------------------------------
+01_Control_one_angle
+    Vereinfachtes Modell eines Winkels des Quadrocopters
+
+This folder contains a model with the linearized siso model of the 
+difference of 2 motors to a resulting angle.
+
+The angular rate and the angle itself are negativly fed back to the input to work like a state regulator.
+
+with the driver file, the transfer function of the model could be created.
+This is necessary to test diffent Feedbackfactors to get an acceptable step response.
+
+The model has a Tranferfunction of:
+
+   1.2  * 110.5
+------------------------------------
+s³+5.128*s²+2*132.6*R1*s+2*132.6*R2
+
+
+with the comand "[a,b] = besself(3,2.1)" a stable tranferfunction with order of 3 can be calculated.
+The second parameter ist the frequency where the group delay is approximatly constant. This factor
+was empirical choosen to get nearly the same factor for s² like the calculated Transferfunction. This
+is necessary because there nis no factor to manipulate the original tf to the controled tf.
+
+a =
+
+         0         0         0    9.2610
+
+
+b =
+
+    1.0000    5.1090   10.8760    9.2610
+
+Comparing both transfer functions resulsts in R1 = 0.041 and R2 = 0.0349. With these factors one angle is stable. 
+
+01_PID_Control_one_angle
+    Wie Control_one_angle mit der Erweiterung, dass die verwendeten Motoren 
+    einen ungleichen Schub erzeugen, und dass dieser mit einer PID Regler 
+    Kaskade geregelt wird
+
+02_Control_two_angles
+    Vereinfachtes Modell bei dem Roll und Pitch geregelt mit einer P-Regler-
+    kaskade geregelt werden.
+
+03_control_2_angles_and_yawrate
+    Wie 02_Control_two_angles mit dem Unterschied, dass zusätzlich die 
+    Winkelgeschwindigkeit des YAW geregelt wird.
+
+04_discrete_control_phi_theta_rpsi
+    Die diskretisierte Regelung des Modells 03_control_2_angles_and_yawrate
+
+05_discrete_control_with_noise
+    Wie 04_discrete_control_phi_theta_rpsi mit dem Unterschied, dass den 
+    Regelgrößen ein Rauschen überlagert wird.
+
+06_discrete_noise_Quantified
+    Wie 05_discrete_control_with_noise mit dem Unterschied, dass die 
+    Regelgrößen zusätzich quantifiziert werden, um die Abtastung eines 
+    Milrcontrollers zu simulieren.
+
+07_discrete_control_angle_from_acc
+    Wie 06_discrete_noise_Quantified mit dem Unterschied, dass die Winkel-
+    information zuerst in eine Beschleunigung und anschließend wieder in
+    einen Winkel zurückgerechnet wird.
+
+07_PID_Discrete
+    Vollständiges Modell der Quadrocopterregelung unter Verwendung einer
+    PID-Reglerkaskade.
+
+08_HIL
+    Vollständiges Modell der Quadrocopterregelung Regelung mit dem Block für 
+    den Modell in Loop test. Verwendet zusätzlich den Embedded MATLAB Block
+    für die P-Reglerkaskade.
+
+08_PID_HIL
+    Wie 08_HIL mit dem Unterschied, dass der Embedded MATLAB Block die Regelung 
+    per PID-Regler beinhaltet.
+
+Final_System
+    Enhält das Gesamtsystem für die P-Reglerkaskade/Zustandsregler. Finales System
+    ist jedoch im Ordner 08_PID_HIL !!!
+
+scratch
+    Enthält MATLAB-Dateien für Versuche.
+
+slprj
+    Wird von MATLAB beim Compilieren von Embedded MATLAB, S-Function erstellt.
+    Inhalt ist nicht relevant.
+
+
+Dateien
+---------------------------------------------------------------------------
+calc_stability.m
+    Dieses M-File wertet das Modell Quadrocopter_control bezüglich der 
+    Eigenwerte(Polstellen der Regelstrecke) aus.
+
+Control_lib.mdl
+    Diese Bibliothek beinhaltet Simulink Blöcke, welche für die Regelung 
+    verwendet wurden.
+
+Copter_Library.mdl
+    Diese Bibliothek beinhaltet Simulink Blöcke welche für die Regelstrecke,
+    Animation und Sensoren verwendet wurden.
+
+Copter_Animation.m
+    Level 1 S-Function welche die Animation des Quadrocopters beinhaltet, wird
+    von einem S-Function Block verwendet( siehe Copter_Library.mdl).
+
+crc16.c
+    Mex-Function zum Berechnen der CRC16-Prüfsumme für das Quadrocopter ZigBee
+    Modell.
+
+crc16.mexw32
+    Compilierte Mex-Funktion aus crc16.c.
+
+double2uint8.c
+    Mex-Function zum konvertieren von double zu unsigned int8.
+
+double2uint8.mexw32
+    Compilierte Mex-Funktion aus double2uint8.mexw32.
+
+*_sfun.mexw32
+    Diese Dateien beinhalten die Compilierten Embedded MATLAB teile der 
+    Modelle mit dem Namen *.mdl.
+    !!! Anmerkung:  Auf Grund von Pfadtiefen kann es erforderlich werden 
+                    Modelle zuerst in diesem Pfad auszuführen und dort die 
+                    *_sfunc.mexw32 Dateien erstellen zu lassen. Anschließend 
+                    können diese in den entsprechenden Ordner kopiert/verschoben 
+                    werden.
+
+quadrocopter_param.m
+    Diese Datei erzeugt die Parameter für den Quadrocopter im Workspace.
+
+    

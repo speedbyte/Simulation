@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="sfun_Copter_Controller_discrete">
+</Property><Property Name="Projektmappendatei" Value="D:\eclipse-cpp-galileo-SR1-win32\Workspace3\MICROCOPTER_MASTER\impl\Copter_System\sfun_Copter_Controller_discrete\sfun_Copter_Controller_discrete.sln">
+</Property><Property Name="Date" Value="Dienstag, 7. September 2010">
+</Property><Property Name="Time" Value="16:32">
+</Property></Properties><Event ErrorLevel="0" Project="sfun_Copter_Controller_discrete" Source="sfun_Copter_Controller_discrete\sfun_Copter_Controller_discrete.vcproj" Description="Converting project file 'D:\eclipse-cpp-galileo-SR1-win32\Workspace3\MICROCOPTER_MASTER\impl\Copter_System\sfun_Copter_Controller_discrete\sfun_Copter_Controller_discrete\sfun_Copter_Controller_discrete.vcproj'.">
+</Event><Event ErrorLevel="1" Project="sfun_Copter_Controller_discrete" Source="sfun_Copter_Controller_discrete\sfun_Copter_Controller_discrete.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="1" Project="sfun_Copter_Controller_discrete" Source="sfun_Copter_Controller_discrete\sfun_Copter_Controller_discrete.vcproj" Description="Attribute 'Detect64BitPortabilityProblems' of 'VCCLCompilerTool' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="1" Project="sfun_Copter_Controller_discrete" Source="sfun_Copter_Controller_discrete\sfun_Copter_Controller_discrete.vcproj" Description="Attribute 'Detect64BitPortabilityProblems' of 'VCCLCompilerTool' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="0" Project="sfun_Copter_Controller_discrete" Source="sfun_Copter_Controller_discrete\sfun_Copter_Controller_discrete.vcproj" Description="Done converting to new project file 'D:\eclipse-cpp-galileo-SR1-win32\Workspace3\MICROCOPTER_MASTER\impl\Copter_System\sfun_Copter_Controller_discrete\sfun_Copter_Controller_discrete\sfun_Copter_Controller_discrete.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="sfun_Copter_Controller_discrete" Source="sfun_Copter_Controller_discrete\sfun_Copter_Controller_discrete.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="sfun_Copter_Controller_discrete.sln" Description="Die Projektmappe wurde erfolgreich konvertiert.">
+</Event><Event ErrorLevel="3" Project="" Source="sfun_Copter_Controller_discrete.sln" Description="Converted">
+</Event></UpgradeLog>

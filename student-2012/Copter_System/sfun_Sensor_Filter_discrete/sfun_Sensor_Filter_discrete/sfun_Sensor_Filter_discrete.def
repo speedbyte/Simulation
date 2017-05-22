@@ -1,0 +1,3 @@
+LIBRARY	"sfun_Sensor_Filter_discrete.dll"
+EXPORTS
+	mexFunction

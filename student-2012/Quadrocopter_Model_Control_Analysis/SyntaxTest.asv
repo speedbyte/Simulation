@@ -1,0 +1,12 @@
+fileNameCollect = [];
+
+fileNameCollect=[fileNameCollect;'FileName1'];
+fileNameCollect=[fileNameCollect;'FileName2'];
+fileNameCollect=[fileNameCollect;'FileName3'];
+
+for i=1:size(fileNameCollect, 1) 
+   fileNameCollect(i,:)
+end
+
+'Record_ToFile(1)_.mat'
+'Record_ToFile(6)_.mat'

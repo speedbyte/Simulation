@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sfun_Sensor_Filter_discrete", "sfun_Sensor_Filter_discrete\sfun_Sensor_Filter_discrete.vcproj", "{8134E0D0-DBEC-413D-965F-D1C2A3FA282F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8134E0D0-DBEC-413D-965F-D1C2A3FA282F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8134E0D0-DBEC-413D-965F-D1C2A3FA282F}.Debug|Win32.Build.0 = Debug|Win32
+		{8134E0D0-DBEC-413D-965F-D1C2A3FA282F}.Release|Win32.ActiveCfg = Release|Win32
+		{8134E0D0-DBEC-413D-965F-D1C2A3FA282F}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

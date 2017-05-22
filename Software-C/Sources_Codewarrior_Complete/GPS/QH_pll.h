@@ -1,0 +1,5 @@
+#ifndef QH_GPS_PLL_DUMMY_H
+#define QH_GPS_PLL_DUMMY_H
+
+
+#endif //QH_GPS_PLL_DUMMY_H

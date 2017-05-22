@@ -1,0 +1,328 @@
+#VRML V2.0 utf8
+
+#Created with V-Realm Builder v2.0
+#Integrated Data Systems Inc.
+#www.ids-net.com
+
+
+SpotLight {
+	cutOffAngle	0.95907
+	direction	0.900454 -0.300468 -0.314485
+	location	-14.3745 16.9425 4.36239
+	on	TRUE
+	radius	100
+}
+Background {
+	groundAngle	[ 0.9, 1.5, 1.57 ]
+	groundColor	[ 0 0.8 0,
+			  0.174249 0.82 0.187362,
+			  0.467223 0.82 0.445801,
+			  0.621997 0.67 0.600279 ]
+	skyAngle	[ 0.1, 1.2, 1.57 ]
+	skyColor	[ 0.76238 0.8 0.1427,
+			  0.277798 0.219779 0.7,
+			  0.222549 0.390234 0.7,
+			  0.60094 0.662637 0.69 ]
+}
+DEF Ground Transform {
+	translation	15.4996 -2.86286 -14.7204
+	rotation	0.993992 0.0088365 -0.109099  0.162604
+	scale	1 1 1
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+				ambientIntensity	1
+				diffuseColor	0 0 0
+				emissiveColor	0.47 0.47 0.47
+				shininess	1
+				specularColor	0 0.54 0
+			}
+
+			texture	NULL
+		}
+
+		geometry	Box {
+			size	300 0.1 300
+		}
+
+	}
+}
+Viewpoint {
+	position	0 10 50
+}
+DEF XYZ_Yaw_transform Transform {
+	translation	0 1 0
+	children DEF Roll_transform Transform {
+		translation	7.2 0 0
+		children DEF Pitch_transform Transform {
+			children DEF Ball Transform {
+				translation	0 0 0
+				scale	0.7471 0.7471 0.7471
+				children [ 
+				    Shape {
+					    appearance	Appearance {
+						    material	Material {
+							    ambientIntensity	0.2
+							    diffuseColor	0.8 0.484408 0.437492
+							    emissiveColor	0.14 0.14 0.14
+							    specularColor	0.11 0.0447598 0.0426157
+						    }
+
+					    }
+
+					    geometry	Sphere {
+						    radius	1.5
+					    }
+
+				    }
+
+				    DEF Rear_Rot_ Transform {
+					    translation	0 1 6.5
+					    children Shape {
+						    appearance	Appearance {
+							    material	Material {
+							    }
+
+						    }
+
+						    geometry	Cylinder {
+							    height	0.5
+							    radius	3
+						    }
+
+					    }
+				    }
+
+				    DEF Left_Right_Axis Transform {
+					    translation	0 0 0
+					    rotation	-8.9039e-007 2.90335e-007 1  1.57997
+					    scale	0.307826 0.307827 0.307828
+					    children Shape {
+						    appearance	Appearance {
+							    material	Material {
+							    }
+
+						    }
+
+						    geometry	Cylinder {
+							    height	40
+							    side	TRUE
+						    }
+
+					    }
+				    }
+
+				    DEF Left_Right_Axis_ Transform {
+					    translation	0 0 0
+					    rotation	1 0 0  1.5708
+					    scale	0.307826 0.307827 0.307828
+					    children Shape {
+						    appearance	Appearance {
+							    material	Material {
+							    }
+
+						    }
+
+						    geometry	Cylinder {
+							    height	40
+						    }
+
+					    }
+				    }
+
+				    DEF Front_Rot_ Transform {
+					    translation	0 1 -6.5
+					    children Shape {
+						    appearance	Appearance {
+							    material	Material {
+								    diffuseColor	0.9 0.257143 0.257143
+							    }
+
+						    }
+
+						    geometry	Cylinder {
+							    height	0.5
+							    radius	3
+						    }
+
+					    }
+				    }
+
+				    DEF Right_Rot_ Transform {
+					    translation	6.5 1 0
+					    children Shape {
+						    appearance	Appearance {
+							    material	Material {
+							    }
+
+						    }
+
+						    geometry	Cylinder {
+							    height	0.5
+							    radius	3
+						    }
+
+					    }
+				    }
+
+				    DEF Left_Rot_ Transform {
+					    translation	-6.50021 1 -4.14863e-005
+					    children Shape {
+						    appearance	Appearance {
+							    material	Material {
+							    }
+
+						    }
+
+						    geometry	Cylinder {
+							    height	0.5
+							    radius	3
+						    }
+
+					    }
+				    }
+
+				    DEF Rear_Rot_Cent_Top_ Transform {
+					    translation	-3.89333e-005 0.800051 6.5
+					    children Shape {
+						    appearance	Appearance {
+							    material	Material {
+							    }
+
+						    }
+
+						    geometry	Cylinder {
+							    height	1.5
+							    radius	0.2
+						    }
+
+					    }
+				    }
+
+				    DEF Rear_Rot_Cent_ Transform {
+					    translation	0 0.3 6.5
+					    children Shape {
+						    appearance	Appearance {
+							    material	Material {
+								    ambientIntensity	0.2
+							    }
+
+						    }
+
+						    geometry	Cylinder {
+							    height	1.5
+							    radius	0.5
+						    }
+
+					    }
+				    }
+
+				    DEF Front_Rot_Cent_Top_ Transform {
+					    translation	0 0.8 -6.5
+					    children Shape {
+						    appearance	Appearance {
+							    material	Material {
+								    diffuseColor	0 0 0
+							    }
+
+						    }
+
+						    geometry	Cylinder {
+							    height	1.5
+							    radius	0.2
+						    }
+
+					    }
+				    }
+
+				    DEF Front_Rot_Cent_ Transform {
+					    translation	7.02076e-006 0.275685 -6.32766
+					    children Shape {
+						    appearance	Appearance {
+							    material	Material {
+								    diffuseColor	0.8 0.79638 0.8
+							    }
+
+						    }
+
+						    geometry	Cylinder {
+							    height	1.5
+							    radius	0.5
+						    }
+
+					    }
+				    }
+
+				    DEF Left_Rot_Cent_ Transform {
+					    translation	-6.5 0.3 0
+					    children Shape {
+						    appearance	Appearance {
+							    material	Material {
+							    }
+
+						    }
+
+						    geometry	Cylinder {
+							    height	1.5
+							    radius	0.5
+						    }
+
+					    }
+				    }
+
+				    DEF Left_Rot_Cent_Top_ Transform {
+					    translation	-6.49372 0.800069 -0.135549
+					    children Shape {
+						    appearance	Appearance {
+							    material	Material {
+								    specularColor	0.54 0.54 0.54
+							    }
+
+						    }
+
+						    geometry	Cylinder {
+							    height	1.5
+							    radius	0.2
+						    }
+
+					    }
+				    }
+
+				    DEF Right_Rot_Cent_ Transform {
+					    translation	6.5 0.3 0
+					    children Shape {
+						    appearance	Appearance {
+							    material	Material {
+							    }
+
+						    }
+
+						    geometry	Cylinder {
+							    height	1.5
+							    radius	0.5
+						    }
+
+					    }
+				    }
+
+				    DEF Right_Rot_Cent_Top_ Transform {
+					    translation	6.49994 0.800073 -1.99453e-008
+					    children Shape {
+						    appearance	Appearance {
+							    material	Material {
+							    }
+
+						    }
+
+						    geometry	Cylinder {
+							    height	1.5
+							    radius	0.2
+						    }
+
+					    }
+				    }
+				]
+			}
+		}
+	}
+}
